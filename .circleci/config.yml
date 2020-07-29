@@ -12,7 +12,7 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
-      - run cat README.md
+      - run: cat README.md
 
 workflows:
   version: 2
