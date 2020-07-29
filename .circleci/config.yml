@@ -1,17 +1,17 @@
 version: 2
+steps: &step
+  - checkout
 jobs:
   job1:
     docker:
       - image: circleci/node:10
-    steps:
-      - checkout
+    <<: *step
       - run: npm install
       - run: npm test
   job2:
     docker:
       - image: circleci/node:10
-    steps:
-      - checkout
+    <<: *step
       - run: cat README.md
 
 workflows:
