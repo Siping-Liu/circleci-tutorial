@@ -5,13 +5,15 @@ jobs:
   job1:
     docker:
       - image: circleci/node:10
-    <<: *step
+    step:
+      - <<: *step
       - run: npm install
       - run: npm test
   job2:
     docker:
       - image: circleci/node:10
-    <<: *step
+    step:
+      - <<: *step
       - run: cat README.md
 
 workflows:
