@@ -1,0 +1,25 @@
+{
+  "name": "circleci-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sum.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siping-Liu/circleci-tutorial.git"
+  },
+  "keywords": [
+    "circleci-tutorial"
+  ],
+  "author": "siping",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Siping-Liu/circleci-tutorial/issues"
+  },
+  "homepage": "https://github.com/Siping-Liu/circleci-tutorial#readme",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}
