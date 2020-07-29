@@ -1,10 +1,16 @@
 version: 2
 jobs:
-  build:
+  job1:
     docker:
       - image: circleci/node:10
-
     steps:
       - checkout
       - run: npm install
       - run: npm test
+  job2:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run cat README.md
+
