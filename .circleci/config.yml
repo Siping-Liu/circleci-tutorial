@@ -14,3 +14,10 @@ jobs:
       - checkout
       - run cat README.md
 
+workflow:
+  version: 2
+  one-and-two:
+    jobs:
+      - job1
+      - job2
+
