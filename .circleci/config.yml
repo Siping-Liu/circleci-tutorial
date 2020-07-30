@@ -57,24 +57,24 @@ workflows:
       - job4:
           requires:
             - job3
-            filters:
-              branches:
-                only:
-                  - testcode
+          filters:
+            branches:
+              only:
+                - testcode
       - job4:
           requires:
             - job3
-            filters:
-              branches:
-                only:
-                  - master
+          filters:
+            branches:
+              only:
+                - master
       - job5:
           requires:
             - job4
-            filters:
-              branches:
-                only:
-                  - master
-                  - release
+          filters:
+            branches:
+              only:
+                - master
+                - release
 
 
