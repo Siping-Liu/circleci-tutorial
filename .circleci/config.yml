@@ -15,13 +15,31 @@ jobs:
     steps:
       - *step
       - run: cat README.md
+  job3:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - *step
+      - run: echo '123'
 
 workflows:
   version: 2
   one-and-two:
     jobs:
       - job1
-      - job2:
+      - job3:
           requires:
             - job1
+          filters:
+            branches:
+              only:
+                - master
+      - job3:
+          requires:
+            - job2
+          filters:
+            branches:
+              only:
+                - testcode
+
 
