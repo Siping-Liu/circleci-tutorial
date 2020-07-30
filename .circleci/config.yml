@@ -27,6 +27,7 @@ workflows:
   one-and-two:
     jobs:
       - job1
+      - job2
       - job3:
           requires:
             - job1
