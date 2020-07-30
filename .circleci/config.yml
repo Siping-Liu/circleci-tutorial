@@ -20,7 +20,19 @@ jobs:
       - image: circleci/node:10
     steps:
       - *step
-      - run: echo '123'
+      - run: echo 'job3'
+  job4:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - *step
+      - run: echo 'job4'
+  job5:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - *step
+      - run: echo 'job5'
 
 workflows:
   version: 2
@@ -42,5 +54,27 @@ workflows:
             branches:
               only:
                 - testcode
+      - job4:
+          requires:
+            - job3
+            filters:
+              branches:
+                only:
+                  - testcode
+      - job4:
+          requires:
+            - job3
+            filters:
+              branches:
+                only:
+                  - master
+      - job5:
+          requires:
+            - job4
+            filters:
+              branches:
+                only:
+                  - master
+                  - release
 
 
