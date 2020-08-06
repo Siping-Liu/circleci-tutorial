@@ -19,14 +19,13 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - "node_modules"
+            - .
   build:
     docker:
       - image: circleci/node:10
     steps:
       - attach_workspace:
           at: .
-      - checkout
       - run: npm run build
 
 workflows:
