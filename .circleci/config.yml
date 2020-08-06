@@ -31,43 +31,9 @@ jobs:
 
 workflows:
   version: 2
-  one-and-two:
+  test-and-build:
     jobs:
-      - job1
-      - job2
-      - job3:
+      - tests
+      - build:
           requires:
-            - job1
-          filters:
-            branches:
-              only:
-                - master
-      - job3:
-          requires:
-            - job2
-          filters:
-            branches:
-              only:
-                - testcode
-      - job4:
-          requires:
-            - job3
-          filters:
-            branches:
-              only:
-                - testcode
-      - job4:
-          requires:
-            - job3
-          filters:
-            branches:
-              only:
-                - master
-      - job5:
-          requires:
-            - job4
-          filters:
-            branches:
-              only:
-                - master
-                - release
+            - tests
